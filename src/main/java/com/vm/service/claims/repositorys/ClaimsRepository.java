@@ -1,4 +1,4 @@
-package com.vm.service.claims.repo;
+package com.vm.service.claims.repositorys;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

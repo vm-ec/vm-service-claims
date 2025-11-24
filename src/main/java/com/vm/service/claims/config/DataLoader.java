@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import com.vm.service.claims.entitys.Claims;
-import com.vm.service.claims.repo.ClaimsRepository;
+import com.vm.service.claims.repositorys.ClaimsRepository;
 
 @Configuration
 public class DataLoader {

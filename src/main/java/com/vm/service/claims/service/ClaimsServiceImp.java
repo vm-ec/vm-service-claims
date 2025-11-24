@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.vm.service.claims.dtos.ClaimsDto;
 import com.vm.service.claims.entitys.Claims;
-import com.vm.service.claims.repo.ClaimsRepository;
+import com.vm.service.claims.repositorys.ClaimsRepository;
 
 @Service
 public class ClaimsServiceImp {

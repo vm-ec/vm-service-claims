@@ -1,4 +1,4 @@
-package com.vm.service.claims.controller;
+package com.vm.service.claims.controllers;
 
 import java.util.HashMap;
 import java.util.Map;
