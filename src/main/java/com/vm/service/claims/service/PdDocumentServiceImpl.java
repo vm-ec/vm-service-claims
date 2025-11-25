@@ -14,19 +14,21 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class PdDocumentServiceImpl {
 
-    private final PdDocumentRepository pdDocumentRepository;
+    private final PdDocumentRepository h2DocRepo;
     private final ModelMapper mapper;
+
+
 
 
     public PdDocumentDto saveDocument(PdDocumentDto dto) {
         PdDocument entity = mapper.map(dto, PdDocument.class);
-        PdDocument saved = pdDocumentRepository.save(entity);
+        PdDocument saved = h2DocRepo.save(entity);
         return mapper.map(saved, PdDocumentDto.class);
     }
 
 
     public List<PdDocumentDto> getAllDocuments() {
-        return pdDocumentRepository.findAll()
+        return h2DocRepo.findAll()
                 .stream()
                 .map(doc -> mapper.map(doc, PdDocumentDto.class))
                 .collect(Collectors.toList());
@@ -34,13 +36,13 @@ public class PdDocumentServiceImpl {
 
 
     public PdDocumentDto getDocumentById(Long id) {
-        PdDocument doc = pdDocumentRepository.findById(id)
+        PdDocument doc = h2DocRepo.findById(id)
                 .orElseThrow(() -> new RuntimeException("Document not found: " + id));
         return mapper.map(doc, PdDocumentDto.class);
     }
 
 
     public void deleteDocument(Long id) {
-        pdDocumentRepository.deleteById(id);
+        h2DocRepo.deleteById(id);
     }
 }

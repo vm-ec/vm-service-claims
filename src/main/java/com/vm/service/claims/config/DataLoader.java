@@ -6,11 +6,13 @@ import org.springframework.context.annotation.Configuration;
 
 import com.vm.service.claims.entitys.Claims;
 import com.vm.service.claims.repositorys.ClaimsRepository;
+import org.springframework.transaction.annotation.Transactional;
 
 @Configuration
 public class DataLoader {
 	
 	 @Bean
+     @Transactional("h2TransactionManager")
 	 CommandLineRunner initDatabase(ClaimsRepository claimsRepo) {
 	        return args -> {
 

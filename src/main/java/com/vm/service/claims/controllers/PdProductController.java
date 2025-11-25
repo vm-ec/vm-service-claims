@@ -54,4 +54,11 @@ public class PdProductController {
         return ResponseEntity.noContent().build();
     }
 
+    //sync
+    @PostMapping("/sync")
+    public ResponseEntity<String> sync() {
+        pdProductService.syncDocumentsToPostgres();
+        return ResponseEntity.ok("Synced successfully!");
+    }
+
 }

@@ -39,4 +39,5 @@ public class PdDocumentController {
         pdDocumentService.deleteDocument(id);
         return ResponseEntity.ok("Document deleted successfully");
     }
+
 }
