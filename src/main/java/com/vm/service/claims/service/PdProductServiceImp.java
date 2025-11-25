@@ -44,12 +44,12 @@ public class PdProductServiceImp {
             List<com.vm.service.claims.entitysOtherDB.PdProduct> otherPdProduct = PdProductDto.stream()
                     .map(o -> mapper.map(o, com.vm.service.claims.entitysOtherDB.PdProduct.class))
                     .toList();
-            log.info("Insert into PostgreSQL");
+            log.info("Insert into AzureSQL");
             // 2. Insert into PostgreSQL
             insertIntoPostgres(otherPdProduct);
             //pdProductRepositoryAnother.saveAll(otherPdProduct);
 
-            log.info("Insert into PostgreSQL completed");
+            log.info("Insert into AzureSQL completed");
             //changing the sync_status
             updateSyncStatusInH2(
                     prods.stream().map(PdProduct::getPdProductId).toList()
