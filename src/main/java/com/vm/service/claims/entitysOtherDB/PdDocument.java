@@ -1,7 +1,10 @@
-package com.vm.service.claims.entitys;
+package com.vm.service.claims.entitysOtherDB;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "PD_DOCUMENT")
@@ -42,22 +45,22 @@ public class PdDocument {
     private PdTransactionSet pdTransactionSet;
 
     // FK: JURISDICTION_SET_ID → JURISDICTION_SET
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "JURISDICTION_SET_ID", nullable = true)
     private JurisdictionSet jurisdictionSet;
 
     // FK: PD_PRODUCT_ID → PD_PRODUCT
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "PD_PRODUCT_ID", nullable = true)
     private PdProduct pdProduct;
 
     // FK: PD_FILING_ID → PD_FILING
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "PD_FILING_ID",nullable = true)
     private PdFiling pdFiling;
 
     // FK: LAST_PD_FILING_ID → PD_FILING
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "LAST_PD_FILING_ID", nullable = true)
     private PdFiling lastPdFiling;
 

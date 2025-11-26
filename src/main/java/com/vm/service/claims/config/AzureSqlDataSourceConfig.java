@@ -1,5 +1,6 @@
 package com.vm.service.claims.config;
 
+
 import jakarta.persistence.EntityManagerFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.context.properties.ConfigurationProperties;

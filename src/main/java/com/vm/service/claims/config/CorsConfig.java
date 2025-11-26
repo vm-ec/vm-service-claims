@@ -24,7 +24,7 @@ public class CorsConfig {
 	
 	
 	 @Bean
-	    public ModelMapper modelMapper() {
+     public ModelMapper modelMapper() {
 	        return new ModelMapper();
 	    }
 }

@@ -1,7 +1,11 @@
-package com.vm.service.claims.entitys;
+package com.vm.service.claims.entitysOtherDB;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.util.Date;
 
 @Entity
@@ -17,7 +21,7 @@ public class PdFiling {
     private Long pdFilingId;
 
     // FK → PD_PRODUCT(PD_PRODUCT_ID)
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "PD_PRODUCT_ID")
     private PdProduct pdProduct;
 

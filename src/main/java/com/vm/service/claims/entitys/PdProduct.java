@@ -18,6 +18,4 @@ public class PdProduct {
     @Column(name = "PD_PRODUCT_NAME",nullable = false, length = 100)
     private String pdProductName;
 
-    @Column(name = "SYNC_STATUS" , nullable = true,length = 100)
-    private String syncStatus;
 }

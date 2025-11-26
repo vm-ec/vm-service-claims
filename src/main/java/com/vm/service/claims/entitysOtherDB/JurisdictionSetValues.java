@@ -1,8 +1,11 @@
-package com.vm.service.claims.entitys;
+package com.vm.service.claims.entitysOtherDB;
 
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "JURISDICTION_SET_VALUES")
@@ -19,8 +22,8 @@ public class JurisdictionSetValues {
     @Column(name = "JURISDICTION_ID", nullable = false)
     private Long jurisdictionId;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "JURISDICTION_SET_ID", nullable = true)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "JURISDICTION_SET_ID", nullable = false)
     private JurisdictionSet jurisdictionSet;
 
     @Column(name = "JURISDICTION_SHORT_NAME", length = 100)

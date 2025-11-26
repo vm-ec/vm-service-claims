@@ -57,7 +57,7 @@ public class PdProductController {
     //sync
     @PostMapping("/sync")
     public ResponseEntity<String> sync() {
-        pdProductService.syncDocumentsToPostgres();
+        pdProductService.syncDataH2toAzureSQL();
         return ResponseEntity.ok("Synced successfully!");
     }
 

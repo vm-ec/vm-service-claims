@@ -1,7 +1,12 @@
-package com.vm.service.claims.entitys;
+package com.vm.service.claims.entitysOtherDB;
+
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.util.Date;
 
 @Entity
@@ -18,7 +23,7 @@ public class PdDocumentVersion {
     private Long pdDocumentVersionId;
 
     // FK → PD_DOCUMENT(PD_DOCUMENT_ID)
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "PD_DOCUMENT_ID", nullable = true)
     private PdDocument pdDocument;
 
@@ -35,17 +40,17 @@ public class PdDocumentVersion {
     private String displayName;
 
     // FK → PD_PRODUCT(PD_PRODUCT_ID)
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "PD_PRODUCT_ID", nullable = true)
     private PdProduct pdProduct;
 
     // FK → PD_FILING(PD_FILING_ID)
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "PD_FILING_ID")
     private PdFiling pdFiling;
 
     // FK → PD_FILING(PD_FILING_ID)
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "LAST_PD_FILING_ID")
     private PdFiling lastPdFiling;
 
@@ -54,7 +59,7 @@ public class PdDocumentVersion {
     private Date pdDocumentEditionDate;
 
     // FK → JURISDICTION_SET(JURISDICTION_SET_ID)
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "JURISDICTION_SET_ID")
     private JurisdictionSet jurisdictionSet;
 }

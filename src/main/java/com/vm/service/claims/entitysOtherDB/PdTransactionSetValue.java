@@ -1,8 +1,11 @@
-package com.vm.service.claims.entitys;
+package com.vm.service.claims.entitysOtherDB;
 
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "PD_TRANSACTION_SET_VALUE")
@@ -16,7 +19,7 @@ public class PdTransactionSetValue {
     @Column(name = "PD_TRANSACTION_SET_VALUE_ID", nullable = false)
     private Long pdTransactionSetValueId;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "PD_TRANSACTION_SET_ID")
     private PdTransactionSet pdTransactionSet;
 
